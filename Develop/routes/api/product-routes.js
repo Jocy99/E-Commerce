@@ -4,22 +4,43 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // The `/api/products` endpoint
 // get all products
 router.get('/', async (req, res) => {
-  // find all products
   try {
-    const allProducts = await Product.findAll();
+    const allProducts = await Product.findAll({
+      where: {
+        id: req.params.id,
+      },
+      // be sure to include its associated Category and Tag data
+      include: [
+        Category,
+        {
+          model: Tag,
+          through: ProductTag
+        },
+      ],
+    });
     res.status(200).json(allProducts);
   } catch (err) {
     res.status(500).json(err)
   }
-  // be sure to include its associated Category and Tag data
 });
 
 // get one product
 router.get('/:id', async (req, res) => {
   try {
   // find a single product by its `id`
-  const singleProduct = await Product.findByPk(req.params.id)
-  // be sure to include its associated Category and Tag data
+  const singleProduct = await Product.findByOne({
+    where: {
+      id: req.params.id,
+    },
+    // be sure to include its associated Category and Tag data
+    include: [
+      Category,
+      {
+        model: Tag,
+        through: ProductTag
+      },
+    ],
+  });
   if (!singleProduct) {
     res.status(404).json({ message: ' No product with that ID in our database! '})
     return;
@@ -107,8 +128,8 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// delete one product by its `id` value
 router.delete('/:id', async (req, res) => {
-  // delete one product by its `id` value
 try {
   const deleteProduct = await Product.destroy({
     where: {
@@ -116,7 +137,7 @@ try {
     }
   });
   if (!deleteProduct) {
-    res.status(404).json({ message: "No category with this id in our database, try again with a new ID number. " })
+    res.status(404).json({ message: "No product with this id in our database, try again with a new ID number. " })
     return;
   }
 
