@@ -84,11 +84,11 @@ You can use tools like Insomnia to test the API routes. The application provides
 
 ## Testing
 
-The application has been designed to meet the provided acceptance criteria. You can use Insomnia or Postman to test the API routes, including GET, POST, PUT, and DELETE operations, to verify its functionality.
+You can use Insomnia or Postman to test the API routes, including GET, POST, PUT, and DELETE operations, to verify its functionality.
 
 ## Contributing
 
-Contributions to this project are welcome. Please feel free to open issues or pull requests to suggest improvements or report bugs.
+Credits and contributions for the starter code given through the SMU coding bootcamp. Contributions to this project are welcome. Please feel free to open issues or pull requests to suggest improvements or report bugs.
 
 ## License
 
