@@ -9,13 +9,13 @@ Category.init(
   {
     // define fields/columns on category model
     id: {
-      type: DataTypes.INTEGAR,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allownull: false
     },
     category_name: {
-      type: String,
+      type: DataTypes.STRING,
       allownull: false
     }, 
   },
