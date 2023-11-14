@@ -84,7 +84,7 @@ You can use tools like Insomnia to test the API routes. The application provides
 
 ## Testing
 
-You can use Insomnia or Postman to test the API routes, including GET, POST, PUT, and DELETE operations, to verify its functionality.
+You can use Insomnia or Postman to test the API routes, including GET, POST, PUT, and DELETE operations, to verify its functionality. Here is the link to the walkthrough video. chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/e57d5712-6454-4e6e-y076-57e206bb813b
 
 ## Contributing
 
